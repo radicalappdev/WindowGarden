@@ -18,7 +18,6 @@ struct YellowFlowerView: View {
                 .font(.extraLargeTitle2)
 
             Text("A window with an id value of `YellowFlower`")
-                .font(.headline)
 
             Button(action: {
                 dismissWindow(id: "YellowFlower")
