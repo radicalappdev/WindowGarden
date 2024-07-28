@@ -15,19 +15,26 @@ struct ContentView: View {
     @Environment(\.dismissWindow) var dismissWindow
 
     var body: some View {
-        VStack {
-            Model3D(named: "Scene", bundle: realityKitContentBundle)
-                .padding(.bottom, 50)
+        VStack(spacing: 24) {
 
-            Text("Window Garden - 01")
+            Text("Window Garden 🌸")
                 .font(.extraLargeTitle2)
 
-            HStack {
-                Button(action: {
-                    openWindow(id: "Window01")
-                }, label: {
-                    Label("Open Window", systemImage: "inset.filled.center.rectangle.badge.plus")
-                })
+            VStack {
+                Text("Open and Close a window by id")
+                HStack {
+                    Button(action: {
+                        openWindow(id: "yellowFlower")
+                    }, label: {
+                        Label("Open Window", systemImage: "inset.filled.center.rectangle.badge.plus")
+                    })
+
+                    Button(action: {
+                        dismissWindow(id: "yellowFlower")
+                    }, label: {
+                        Label("Close Window", systemImage: "xmark.circle")
+                    })
+                }
             }
 
         }

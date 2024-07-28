@@ -12,15 +12,22 @@ struct WindowContent01: View {
     @Environment(\.dismissWindow) var dismissWindow
 
     var body: some View {
-        VStack {
-            Text("This is another window.")
+        VStack(spacing: 24) {
+            
+            Text("Yellow Flower 🌼")
+                .font(.extraLargeTitle2)
+
+            Text("A window with an id value of `yellowFlower`")
                 .font(.headline)
+
             Button(action: {
-                dismissWindow(id: "Window01")
+                dismissWindow(id: "yellowFlower")
             }, label: {
                 Label("Close Window", systemImage: "xmark.circle")
             })
+
         }
+        .padding()
     }
 }
 

@@ -14,7 +14,7 @@ struct Garden01App: App {
             ContentView()
         }
 
-        WindowGroup(id: "Window01") {
+        WindowGroup(id: "yellowFlower") {
             WindowContent01()
         }
     }
