@@ -24,13 +24,13 @@ struct ContentView: View {
                 Text("Open and Close a window by id")
                 HStack {
                     Button(action: {
-                        openWindow(id: "yellowFlower")
+                        openWindow(id: "YellowFlower")
                     }, label: {
                         Label("Open Window", systemImage: "inset.filled.center.rectangle.badge.plus")
                     })
 
                     Button(action: {
-                        dismissWindow(id: "yellowFlower")
+                        dismissWindow(id: "YellowFlower")
                     }, label: {
                         Label("Close Window", systemImage: "xmark.circle")
                     })

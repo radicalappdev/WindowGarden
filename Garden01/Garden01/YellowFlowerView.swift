@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct WindowContent01: View {
+struct YellowFlowerView: View {
 
     @Environment(\.dismissWindow) var dismissWindow
 
@@ -21,7 +21,7 @@ struct WindowContent01: View {
                 .font(.headline)
 
             Button(action: {
-                dismissWindow(id: "yellowFlower")
+                dismissWindow(id: "YellowFlower")
             }, label: {
                 Label("Close Window", systemImage: "xmark.circle")
             })
@@ -32,5 +32,5 @@ struct WindowContent01: View {
 }
 
 #Preview {
-    WindowContent01()
+    YellowFlowerView()
 }
