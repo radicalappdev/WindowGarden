@@ -20,21 +20,19 @@ struct ContentView: View {
             Text("Window Garden 🌸")
                 .font(.extraLargeTitle2)
 
-            VStack {
-                Text("Open and Close a window by id")
-                HStack {
-                    Button(action: {
-                        openWindow(id: "YellowFlower")
-                    }, label: {
-                        Label("Open Window", systemImage: "inset.filled.center.rectangle.badge.plus")
-                    })
+            Text("Open and Close a window with an id value of `YellowFlower`")
+            HStack {
+                Button(action: {
+                    openWindow(id: "YellowFlower")
+                }, label: {
+                    Label("Open Window", systemImage: "inset.filled.center.rectangle.badge.plus")
+                })
 
-                    Button(action: {
-                        dismissWindow(id: "YellowFlower")
-                    }, label: {
-                        Label("Close Window", systemImage: "xmark.circle")
-                    })
-                }
+                Button(action: {
+                    dismissWindow(id: "YellowFlower")
+                }, label: {
+                    Label("Close Window", systemImage: "xmark.circle")
+                })
             }
 
         }
