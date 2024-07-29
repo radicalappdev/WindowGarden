@@ -15,7 +15,8 @@ struct Garden02App: App {
             ContentView()
         }
 
-//        WindowGroup(id: "YellowFlower") {
-//            YellowFlowerView()
-//        }
+        WindowGroup(id: "YellowFlower") {
+            YellowFlowerView()
+        }
+        .defaultSize(CGSize(width: 600, height: 600))
     }}

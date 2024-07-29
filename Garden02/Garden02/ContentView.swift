@@ -20,7 +20,7 @@ struct ContentView: View {
             Text("Window Garden 🌸")
                 .font(.extraLargeTitle2)
 
-            Text("Open and Close a window with an id value of `YellowFlower`")
+            Text("The Yellow Flower window has a new default size.")
             HStack {
                 Button(action: {
                     openWindow(id: "YellowFlower")
