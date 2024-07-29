@@ -11,14 +11,30 @@ import RealityKitContent
 
 struct ContentView: View {
 
+    @Environment(\.openWindow) var openWindow
+    @Environment(\.dismissWindow) var dismissWindow
+
     var body: some View {
-        VStack {
-            Model3D(named: "Scene", bundle: realityKitContentBundle)
-                .padding(.bottom, 50)
+        VStack(spacing: 24) {
 
-            Text("Hello, world!")
+            Text("Window Garden 🌸")
+                .font(.extraLargeTitle2)
 
-            ToggleImmersiveSpaceButton()
+            Text("Open and Close a window with an id value of `YellowFlower`")
+            HStack {
+                Button(action: {
+                    openWindow(id: "YellowFlower")
+                }, label: {
+                    Label("Open Window", systemImage: "inset.filled.center.rectangle.badge.plus")
+                })
+
+                Button(action: {
+                    dismissWindow(id: "YellowFlower")
+                }, label: {
+                    Label("Close Window", systemImage: "xmark.circle")
+                })
+            }
+
         }
         .padding()
     }
@@ -26,5 +42,4 @@ struct ContentView: View {
 
 #Preview(windowStyle: .automatic) {
     ContentView()
-        .environment(AppModel())
 }
