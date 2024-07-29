@@ -39,9 +39,6 @@ struct RedFlowerView: View {
     }
 }
 
-
-
-
 #Preview {
     RedFlowerView()
 }
