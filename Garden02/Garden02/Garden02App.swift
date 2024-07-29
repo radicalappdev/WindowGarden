@@ -23,5 +23,12 @@ struct Garden02App: App {
         .windowResizability(.contentSize)
         .defaultSize(CGSize(width: 600, height: 600))
 
+        WindowGroup(id: "RedFlower") {
+            RedFlowerView()
+                // frame moved into the view
+        }
+        .windowResizability(.contentSize)
+        .defaultSize(CGSize(width: 600, height: 600))
+
     }
 }

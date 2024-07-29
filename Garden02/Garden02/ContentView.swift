@@ -20,20 +20,41 @@ struct ContentView: View {
             Text("Window Garden 🌸")
                 .font(.extraLargeTitle2)
 
-            Text("The Yellow Flower window has a new default size.")
-            HStack {
-                Button(action: {
-                    openWindow(id: "YellowFlower")
-                }, label: {
-                    Label("Open Window", systemImage: "inset.filled.center.rectangle.badge.plus")
-                })
+            VStack {
+                Text("The Yellow Flower window has a new default size.")
+                HStack {
+                    Button(action: {
+                        openWindow(id: "YellowFlower")
+                    }, label: {
+                        Label("Open Window", systemImage: "inset.filled.center.rectangle.badge.plus")
+                    })
 
-                Button(action: {
-                    dismissWindow(id: "YellowFlower")
-                }, label: {
-                    Label("Close Window", systemImage: "xmark.circle")
-                })
+                    Button(action: {
+                        dismissWindow(id: "YellowFlower")
+                    }, label: {
+                        Label("Close Window", systemImage: "xmark.circle")
+                    })
+                }
             }
+
+
+            VStack {
+                Text("The Red Flower window will animate size")
+                HStack {
+                    Button(action: {
+                        openWindow(id: "RedFlower")
+                    }, label: {
+                        Label("Open Window", systemImage: "inset.filled.center.rectangle.badge.plus")
+                    })
+
+                    Button(action: {
+                        dismissWindow(id: "RedFlower")
+                    }, label: {
+                        Label("Close Window", systemImage: "xmark.circle")
+                    })
+                }
+            }
+
 
         }
         .padding()
