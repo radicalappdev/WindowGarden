@@ -13,15 +13,27 @@ struct DetailView: View {
 
     var body: some View {
         if let item = item {
-            Text(item.flower)
-                .font(.title)
-                .padding()
-                .navigationBarTitle(item.name)
+            GeometryReader { geometry in
+                let radius = min(geometry.size.width, geometry.size.height) / 4
+                let centerX = geometry.size.width / 2
+                let centerY = geometry.size.height / 2
+                let flowers = Array(repeating: item.flower, count: 6)
+
+                ForEach(0..<6) { index in
+                    let angle = Angle.degrees(Double(index) / Double(flowers.count) * 360)
+                    let xOffset = radius * cos(angle.radians)
+                    let yOffset = radius * sin(angle.radians)
+
+                    Text(flowers[index])
+                        .font(.extraLargeTitle2)
+                        .position(x: centerX + xOffset, y: centerY + yOffset)
+                }
+            }
+
         } else {
-            Text("No Flower Found")
+            Text("No Flowers Found!")
                 .font(.title)
                 .padding()
-                .navigationBarTitle("No Item Selected")
         }
     }
 }
