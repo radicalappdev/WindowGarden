@@ -17,17 +17,20 @@ struct Garden04App: App {
             ContentView()
                 .environment(appModel)
         }
+        .defaultSize(width: 500, height: 500)
 
-        ImmersiveSpace(id: appModel.immersiveSpaceID) {
-            ImmersiveView()
-                .environment(appModel)
-                .onAppear {
-                    appModel.immersiveSpaceState = .open
-                }
-                .onDisappear {
-                    appModel.immersiveSpaceState = .closed
-                }
+        // Garden Windows
+        WindowGroup(id: "FlowerWindow") {
+            Text("🌼")
+                .font(.system(size: 128))
         }
-        .immersionStyle(selection: .constant(.full), in: .full)
+        .defaultSize(CGSize(width: 300, height: 300))
+        .defaultWindowPlacement { _, context in
+            if let mainWindow = context.windows.first {
+                return WindowPlacement(.leading(mainWindow))
+            }
+            return WindowPlacement(.none)
+        }
+
     }
 }
