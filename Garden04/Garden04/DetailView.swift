@@ -9,10 +9,12 @@ import SwiftUI
 
 struct DetailView: View {
 
-    @Binding var item: FlowerItem? 
+    // We will pass a Flower Item when opening a window
+    @Binding var item: FlowerItem?
 
     var body: some View {
         if let item = item {
+            // Get the flower from the item and lay out 6 copies of it in a circle
             GeometryReader { geometry in
                 let radius = min(geometry.size.width, geometry.size.height) / 4
                 let centerX = geometry.size.width / 2
@@ -37,7 +39,3 @@ struct DetailView: View {
         }
     }
 }
-
-//#Preview {
-//    DetailView()
-//}

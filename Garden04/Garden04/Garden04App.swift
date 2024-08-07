@@ -23,13 +23,12 @@ struct Garden04App: App {
 
         WindowGroup(id: "FlowerWindow", for: FlowerItem.self, content: { $value in
             DetailView(item: $value)
-                .environment(appModel)
-                .environment(flowerData)
         })
+
         .defaultSize(CGSize(width: 300, height: 300))
         .defaultWindowPlacement { _, context in
-            if let mainWindow = context.windows.first {
-                return WindowPlacement(.leading(mainWindow))
+            if let lastWindow = context.windows.last {
+                return WindowPlacement(.leading(lastWindow))
             }
             return WindowPlacement(.none)
         }
