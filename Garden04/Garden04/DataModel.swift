@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct FlowerItem: Identifiable {
-    let id: UUID = UUID()
+struct FlowerItem: Identifiable, Codable, Hashable {
+    var id: UUID = UUID()
     let name: String
     let flower: String
 }

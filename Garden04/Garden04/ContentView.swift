@@ -18,16 +18,17 @@ struct ContentView: View {
             Text("Window Garden 🌸")
                 .font(.extraLargeTitle2)
 
-            Button(action: {
-                openWindow(id: "FlowerWindow")
-            }, label: {
-                Label("Open Windows", systemImage: "inset.filled.center.rectangle.badge.plus")
-            })
-
             List(flowerData.items) { item in
                 HStack {
-                    Text(item.flower)
-                    Text(item.name)
+                    Button(action: {
+                        openWindow(id: "FlowerWindow", value: item)
+                    }, label: {
+                        HStack {
+                            Text(item.flower)
+                            Text(item.name)
+                        }
+                        .font(.largeTitle)
+                    })
                 }
             }
         }

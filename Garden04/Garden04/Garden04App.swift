@@ -21,11 +21,11 @@ struct Garden04App: App {
         }
         .defaultSize(width: 500, height: 500)
 
-        // Garden Windows
-        WindowGroup(id: "FlowerWindow") {
-            Text("🌼")
-                .font(.system(size: 128))
-        }
+        WindowGroup(id: "FlowerWindow", for: FlowerItem.self, content: { $value in
+            DetailView(item: $value)
+                .environment(appModel)
+                .environment(flowerData)
+        })
         .defaultSize(CGSize(width: 300, height: 300))
         .defaultWindowPlacement { _, context in
             if let mainWindow = context.windows.first {
