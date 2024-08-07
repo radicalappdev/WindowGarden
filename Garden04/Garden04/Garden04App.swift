@@ -11,11 +11,13 @@ import SwiftUI
 struct Garden04App: App {
 
     @State private var appModel = AppModel()
+    @State private var flowerData = FlowerData()
 
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environment(appModel)
+                .environment(flowerData)
         }
         .defaultSize(width: 500, height: 500)
 

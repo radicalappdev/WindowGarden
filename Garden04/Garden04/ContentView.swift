@@ -11,6 +11,7 @@ import RealityKitContent
 
 struct ContentView: View {
     @Environment(\.openWindow) var openWindow
+    @Environment(FlowerData.self) private var flowerData
 
     var body: some View {
         VStack(spacing: 24) {
@@ -22,6 +23,13 @@ struct ContentView: View {
             }, label: {
                 Label("Open Windows", systemImage: "inset.filled.center.rectangle.badge.plus")
             })
+
+            List(flowerData.items) { item in
+                HStack {
+                    Text(item.flower)
+                    Text(item.name)
+                }
+            }
         }
         .padding()
     }
