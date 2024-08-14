@@ -10,13 +10,13 @@ import RealityKit
 import RealityKitContent
 
 struct ContentView: View {
+    @Environment(\.openWindow) var openWindow
 
     var body: some View {
-        VStack {
-            Model3D(named: "Scene", bundle: realityKitContentBundle)
-                .padding(.bottom, 50)
+        VStack(spacing: 24) {
+            Text("Window Garden 🌸")
+                .font(.extraLargeTitle2)
 
-            Text("Hello, world!")
 
         }
         .padding()

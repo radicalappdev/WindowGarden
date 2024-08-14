@@ -13,10 +13,20 @@ struct Garden05App: App {
     @State private var appModel = AppModel()
 
     var body: some Scene {
-        WindowGroup {
+        WindowGroup(id: "SplashScreen") {
+            SplashScreen()
+                .environment(appModel)
+        }
+        .defaultSize(width: 500, height: 500)
+
+
+        WindowGroup(id: "MainWindow") {
             ContentView()
                 .environment(appModel)
         }
+        .defaultSize(width: 500, height: 500)
+
+
 
       
     }
