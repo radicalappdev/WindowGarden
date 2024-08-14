@@ -10,7 +10,6 @@ import SwiftUI
 struct SplashScreen: View {
     @Environment(\.pushWindow) private var pushWindow
     @Environment(\.dismissWindow) private var dismissWindow
-    @Environment(AppModel.self) private var appModel
 
     @State private var isSpinning = false
 
@@ -21,29 +20,30 @@ struct SplashScreen: View {
                 height: 3,
                 locations: .points([
                     SIMD2<Float>(0.000, 0.000),
-                    SIMD2<Float>(0.050, 0.000),
+                    SIMD2<Float>(0.120, 0.000),
                     SIMD2<Float>(1.000, 0.000),
-                    SIMD2<Float>(0.000, 0.450),
-                    SIMD2<Float>(0.150, 0.750),
-                    SIMD2<Float>(1.000, 0.550),
+                    SIMD2<Float>(0.000, 0.350),
+                    SIMD2<Float>(0.700, 0.800),
+                    SIMD2<Float>(1.000, 0.650),
                     SIMD2<Float>(0.000, 1.000),
-                    SIMD2<Float>(0.550, 1.000),
+                    SIMD2<Float>(0.580, 1.000),
                     SIMD2<Float>(1.000, 1.000)
                 ]),
                 colors: .colors([
-                    Color(red: 0.600, green: 0.800, blue: 1.000),
                     Color(red: 0.800, green: 0.900, blue: 1.000),
+                    Color(red: 0.600, green: 0.800, blue: 1.000),
                     Color(red: 1.000, green: 1.000, blue: 1.000),
-                    Color(red: 0.400, green: 0.700, blue: 0.900),
-                    Color(red: 0.500, green: 0.900, blue: 1.000),
-                    Color(red: 0.900, green: 1.000, blue: 1.000),
-                    Color(red: 0.300, green: 0.500, blue: 0.800),
-                    Color(red: 0.700, green: 0.850, blue: 1.000),
-                    Color(red: 0.600, green: 0.900, blue: 1.000)
+                    Color(red: 0.500, green: 0.700, blue: 0.900),
+                    Color(red: 0.400, green: 0.600, blue: 0.900),
+                    Color(red: 0.900, green: 0.900, blue: 1.000),
+                    Color(red: 0.400, green: 0.500, blue: 0.700),
+                    Color(red: 0.700, green: 0.800, blue: 1.000),
+                    Color(red: 0.850, green: 0.950, blue: 1.000)
                 ]),
                 background: Color(red: 0.700, green: 0.900, blue: 1.000),
                 smoothsColors: true
             )
+            
             Text("🌸")
                 .font(.system(size: 100))
                 .rotationEffect(Angle.degrees(isSpinning ? 360 : 0))
@@ -73,3 +73,6 @@ struct SplashScreen: View {
 #Preview {
     SplashScreen()
 }
+
+
+

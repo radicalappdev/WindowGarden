@@ -15,7 +15,6 @@ struct Garden05App: App {
     var body: some Scene {
         WindowGroup(id: "SplashScreen") {
             SplashScreen()
-                .environment(appModel)
         }
         .defaultSize(width: 500, height: 500)
 
@@ -35,3 +34,5 @@ struct Garden05App: App {
       
     }
 }
+
+
