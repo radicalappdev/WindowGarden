@@ -26,8 +26,12 @@ struct Garden05App: App {
         }
         .defaultSize(width: 500, height: 500)
 
-
-
+        // Garden Windows
+        WindowGroup(id: "FlowerPicker") {
+            FlowerPicker()
+                .environment(appModel)
+        }
+        .defaultSize(width: 500, height: 500)
       
     }
 }

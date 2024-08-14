@@ -10,13 +10,20 @@ import RealityKit
 import RealityKitContent
 
 struct ContentView: View {
-    @Environment(\.openWindow) var openWindow
+
+    @Environment(\.pushWindow) private var pushWindow
+    @Environment(AppModel.self) private var appModel
 
     var body: some View {
         VStack(spacing: 24) {
-            Text("Window Garden 🌸")
+            Text("Window Garden \(appModel.selectedFlower)")
                 .font(.extraLargeTitle2)
 
+            Button(action: {
+                pushWindow(id: "FlowerPicker")
+            }, label: {
+                Label("Change Flower", image: "pencil.circle")
+            })
 
         }
         .padding()
