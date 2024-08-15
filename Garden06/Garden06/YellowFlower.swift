@@ -20,6 +20,9 @@ struct YellowFlower: View {
 
             WindowController()
 
+            Text("🌼🌼🌼🌼🌼")
+                .padding()
+
         }
         .padding()
         // Make sure to use `initial: true` to report the phase when the window opens

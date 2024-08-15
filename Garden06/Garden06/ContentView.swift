@@ -23,6 +23,9 @@ struct ContentView: View {
             
             WindowController()
 
+            Text("🌸🌸🌸🌸🌸")
+                .padding()
+
 
         }
         .padding()

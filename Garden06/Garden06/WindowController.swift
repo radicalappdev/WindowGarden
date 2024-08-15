@@ -23,7 +23,7 @@ struct WindowController: View {
 
             }, label: {
                 HStack {
-                    Text("MainWindow")
+                    Text("Main Window")
                     Spacer()
                     Text(appModel.mainWindowOpen ? "Open" : "Closed")
                 }
