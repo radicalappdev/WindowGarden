@@ -22,7 +22,7 @@ struct ContentView: View {
             Button(action: {
                 pushWindow(id: "FlowerPicker")
             }, label: {
-                Label("Change Flower", image: "pencil.circle")
+                Label("Change Flower", systemImage: "pencil")
             })
 
         }
