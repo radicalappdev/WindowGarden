@@ -17,7 +17,13 @@ struct Garden06App: App {
             ContentView()
                 .environment(appModel)
         }
+        .defaultSize(width: 500, height: 500)
 
+        WindowGroup(id: "YellowFlower") {
+            YellowFlower()
+                .environment(appModel)
+        }
+        .defaultSize(width: 500, height: 500)
 
     }
 }
