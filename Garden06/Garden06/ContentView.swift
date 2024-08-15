@@ -14,21 +14,19 @@ struct ContentView: View {
 
     @Environment(\.scenePhase) private var scenePhase
     @Environment(\.openWindow) private var openWindow
+    @Environment(\.dismissWindow) private var dismissWindow
 
     var body: some View {
         VStack(spacing: 24) {
-            Text("Window Garden \(appModel.mainWindowOpen)")
+            Text("Window Garden 🌸")
                 .font(.extraLargeTitle2)
+            
+            WindowController()
 
-            Button(action: {
-                openWindow(id: "YellowFlower")
-            }, label: {
-                Label("Open Yellow Flower", systemImage: "arrow.up.left.and.arrow.down.right.rectangle.fill")
-            })
 
         }
         .padding()
-        .onChange(of: scenePhase) {
+        .onChange(of: scenePhase, initial: true) {
             switch scenePhase {
             case .inactive, .background:
                 appModel.mainWindowOpen = false

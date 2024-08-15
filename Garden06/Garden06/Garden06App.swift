@@ -18,12 +18,26 @@ struct Garden06App: App {
                 .environment(appModel)
         }
         .defaultSize(width: 500, height: 500)
+        .defaultWindowPlacement { content, context in
+            if let new = context.windows.first(where: { $0.id == "YellowFlower" }) {
+                return WindowPlacement(.leading(new))
+            } else {
+                return WindowPlacement(.none)
+            }
+        }
 
         WindowGroup(id: "YellowFlower") {
             YellowFlower()
                 .environment(appModel)
         }
         .defaultSize(width: 500, height: 500)
+        .defaultWindowPlacement { content, context in
+            if let new = context.windows.first(where: { $0.id == "MainWindow" }) {
+                return WindowPlacement(.trailing(new))
+            } else {
+                return WindowPlacement(.none)
+            }
+        }
 
     }
 }

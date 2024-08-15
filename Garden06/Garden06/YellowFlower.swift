@@ -15,25 +15,22 @@ struct YellowFlower: View {
 
     var body: some View {
         VStack(spacing: 24) {
-            Text("🌼🌼🌼 \(appModel.yellowFlowerOpen)")
+            Text("Yellow Flower 🌼")
                 .font(.extraLargeTitle2)
 
-            Button(action: {
-                openWindow(id: "MainWindow")
-            }, label: {
-                Label("Open Main Window", systemImage: "arrow.up.left.and.arrow.down.right.rectangle.fill")
-            })
+            WindowController()
 
         }
         .padding()
-        .onChange(of: scenePhase) {
+        // Make sure to use `initial: true` to report the phase when the window opens
+        .onChange(of: scenePhase, initial: true) {
             switch scenePhase {
             case .inactive, .background:
-                appModel.mainWindowOpen = false
+                appModel.yellowFlowerOpen = false
             case .active:
-                appModel.mainWindowOpen = true
+                appModel.yellowFlowerOpen = true
             @unknown default:
-                appModel.mainWindowOpen = false
+                appModel.yellowFlowerOpen = false
             }
         }
     }
